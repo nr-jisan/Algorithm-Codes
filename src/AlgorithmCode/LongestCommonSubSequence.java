@@ -13,7 +13,7 @@ class LCS {
 
     int GeneralLCS(char[] A, char[] B, int m, int n) {
         count++;
-        if (m == 0 || n == 0) return (l[m][n] = 0);
+        if (m == 0 || n == 0) return 0;
         if (A[m - 1] == B[n - 1]) {
             return 1 + GeneralLCS(A, B, m - 1, n - 1);
         } else {
@@ -37,7 +37,7 @@ class LCS {
         }
     }
 
-    // Build DP table and keep it in the field `dp`
+
     int DynamicLCS(char[] A, char[] B, int m, int n) {
         dp = new int[m + 1][n + 1];
 
